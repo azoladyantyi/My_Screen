@@ -47,3 +47,7 @@ h2 {
 #myTable tr {
   border-bottom: 1px solid #ddd;
 }
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #00FFFF;
+}
