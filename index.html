@@ -3,101 +3,74 @@
 
 <head>
     <style></style>
-      <link rel="stylesheet" href="my_screen.css">
+    <link rel="stylesheet" href="my_screen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+
 </head>
 
 <body>
-    <h2>Jobs Available...</h2>
+    <script id="tableTemplate" type="text/x-handlebars-template">
 
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for it job you like.." title="Type in job tile">
-
-    <table id="myTable">
-        <tr class="header">
-            <th style="width:20%;">Job Title</th>
-            <th style="width:20%;">Job Type</th>
-            <th style="width:20%;">Job location</th>
-            <th style="width:30%;">Name of company</th>
-            <th style="width:40%;">Age</th>
+          <table id="tableID" border="1" style="cursor: pointer;">
+            <thead>
+                <tr>
+                    <th>job title</th>
+                    <th>Job Type</th>
+                    <th>job location</th>
+                    <th>Name of company</th>
+                    <th >Age</th>
+                    <th>click button to get a form</th>
+                </tr>
+            </thead>
+            <tbody>
+          {{#each job}}
+          <tr>
+            <td>{{jobTitle}}</td>
+            <td>{{JobType}}</td>
+            <td>{{jobLocation}}</td>
+            <td>{{NameOfCompany}}</td>
+            <td >{{Age}}</td>
+              <td><button onclick="formFunction('{{jobTitle}}');">{{Appy}}</button></td>
+            {{/each}}
         </tr>
-        <tr>
-            <td>Application Developer</td>
-            <td>Permanent</td>
-            <td>Cape Town</td>
-            <td>Media24</td>
-            <td>18-35years</td>
-        </tr>
-        <tr>
-            <td>Associate Developer</td>
-            <td>1 year contract</td>
-            <td>Sea Point </td>
-            <td>Nedbank</td>
-            <td>18-35years</td>
-        </tr>
-        <tr>
-            <td>Application Support Analyst</td>
-            <td>Permanent</td>
-            <td>Cape Town</td>
-            <td>Amazon</td>
-            <td>18-35years</td>
-        </tr>
-        <tr>
-            <td>Applications Engineer</td>
-            <td>Permanent</td>
-            <td>Century City</td>
-            <td>Standard Bank</td>
-            <td>18-35years</td>
-        </tr>
-        <td>Back End Developer</td>
-        <td>1 year contract</td>
-        <td>water Front</td>
-        <td>CodeX</td>
-        <td>18-25years</td>
-        </tr>
-        <tr>
-            <td>Data Center Support Specialist</td>
-            <td>6 months contract</td>
-            <td>Green Point</td>
-            <td>Capitec</td>
-            <td>18-35years</td>
-        </tr>
-        <tr>
-            <td>Data Quality Manager</td>
-            <td>6 months contract</td>
-            <td>Belville</td>
-            <td>Sanlam</td>
-            <td>18-35years</td>
-        </tr>
-        <tr>
-            <td>Database Administratorn</td>
-            <td>1 year contracy</td>
-            <td>Cape bTown</td>
-            <td>City of Cape Town</td>
-            <td>18-35years</td>
-        </tr>
-        <tr>
-            <td>Front End Developer</td>
-            <td>6 months contract</td>
-            <td>Water Front</td>
-            <td>CodeX</td>
-            <td>18-35years</td>
-        </tr>
-        <tr>
-            <td>Help Desk Specialist</td>
-            <td>Permanent</td>
-            <td>Paarl</td>
-            <td>Shopprite</td>
-            <td>18-25years</td>
-        </tr>
-        <tr>
-            <td>Help Desk Technician</td>
-            <td>1 year contact</td>
-            <td>GoodWood</td>
-            <td>Jet</td>
-            <td>18-35years</td>
-        </tr>
+      </tbody>
     </table>
 
+    </script>
+    <h2>Jobs Available...</h2>
+    <button name="button" id="display">Display available jobs</button><br><br>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for it job you like.." title="Type in job tile">
+<br><br>
+    <div id="tableDisplay">
+    </div>
+<div class="applicationForm">
+
+    <h1>Welcome to IT Company</h1>
+    <h2>Application Form</h2>
+    <div class="">
+        Name <br>
+        <input type="text" name="name" value="" id="name"> <br><br>
+         Surname<br>
+        <input type="text" name="surname" value=""><br><br>
+        Age<br>
+       <input type="text" name="" value="" id="input"><br><br>
+        Job Title<br>
+        <input type="text" name="jobTitle" value=""><br><br>
+        Job Type<br>
+        <input type="text" name="jobTitle" value=""><br><br>
+        Job location <br>
+        <input type="text" name="jobTitle" value=""><br><br>
+        Name of company<br>
+        <input type="text" name="jobTitle" value=""><br><br>
+    </div>
+    <button type="button" name="Submit" id="submit">Submit</button>
+  </div>
+    <!-- <div id="displayResults'">
+    </div> -->
+    <div id="formDisplay">
+
+    </div>
 </body>
 <script type="text/javascript" src="my_screen.js"></script>
-<A HREF="index2.html">Next Page</A>
+
 </html>
