@@ -4,6 +4,7 @@ if (tableTemplate) {
     var tableTemplateInst = Handlebars.compile(tableTemplate);
 
     var JobData = [{
+            id : "1",
             jobTitle: 'back end developer',
             JobType: 'Permanent',
             jobLocation: 'waterfront',
@@ -12,6 +13,7 @@ if (tableTemplate) {
               Appy : 'Apply'
         },
         {
+          id : "2",
             jobTitle: 'Associate Developer',
             JobType: '1 year contract',
             jobLocation: 'Sea Point ',
@@ -21,6 +23,7 @@ if (tableTemplate) {
         },
 
         {
+          id : "3",
             jobTitle: 'Application Developer',
             JobType: 'Permanent',
             jobLocation: 'Cape Town',
@@ -28,7 +31,7 @@ if (tableTemplate) {
             Age: '18 - 35 years',
               Appy : 'Apply'
         }, {
-
+          id : "3",
             jobTitle: 'Associate Developer',
             JobType: '1 year contract',
             jobLocation: 'Sea Point ',
@@ -36,6 +39,7 @@ if (tableTemplate) {
             Age: '18 - 35 years',
               Appy : 'Apply'
         }, {
+          id : "4",
             jobTitle: 'Application Support Analyster',
             JobType: 'Permanent',
             jobLocation: 'Cape Town ',
@@ -48,6 +52,7 @@ if (tableTemplate) {
 
     var tableDisplay = document.querySelector('#tableDisplay');
     var displayButton = document.getElementById('display');
+
     displayButton.addEventListener('click', function() {
         var tableTemplateInst = Handlebars.compile(tableTemplate);
 
@@ -62,11 +67,25 @@ if (tableTemplate) {
 }
 
 
-function formFunction(jobTitle){
-  var tableDisplay = document.querySelector('#tableDisplay');
-  tableDisplay.innerHTML = "";
-  var applicationForm = document.querySelector('.applicationForm');
-  applicationForm.style="display:show";
+function formFunction(jobId){
+
+  //var rowClicked = evt.target;
+
+  // get the Id of the fruit clicked on using dataset
+  //var jobId = Number(rowClicked.dataset.jobId);
+
+  // now find the price for the fruit you clicked on
+
+  var itJob = JobData.find(function(f){
+    return f.id === jobId;
+  });
+
+  alert(itJob);
+
+  // var tableDisplay = document.querySelector('#tableDisplay');
+  // tableDisplay.innerHTML = "";
+  // var applicationForm = document.querySelector('.applicationForm');
+  // applicationForm.style="display:show";
 
   // console.log(jobTitle);
 }
@@ -106,34 +125,32 @@ var table = document.getElementById("tableID");
         textBox.value = "";
     });
 
-    var jobTemplateText = document.querySelector('.jobsTemplate').innerHTML;
+    var applicationTemplateText = document.querySelector('.applicationTemplate').innerHTML;
 
-    var jobTemplateInst = Handlebars.compile(jobTemplateText);
+    var applicationTemplate = Handlebars.compile(applicationTemplateText);
 
     var jobList = [{ id : 35,  jobTitle : "Application Developer", JobType : 'Permanent', job  : 'JobType : Permanent, JobType : Permanent, jobLocation : waterfront,',}];
 
-    jobs.innerHTML = jobTemplateInst({job : jobList});
+    //jobs.innerHTML = applicationTemplate({job : jobList});
 
 
 
     // use event bubbling to check which row in the table was clicked on
-    jobs.addEventListener('click', function(evt){
-        var rowClicked = evt.target;
-
-        // get the Id of the fruit clicked on using dataset
-        var jobId = Number(rowClicked.dataset.jobId);
-
-        // now find the price for the fruit you clicked on
-
-        var itJobs = jobList.find(function(f){
-          return f.id === jobId;
-        });
-
-        jobInfo.textContent = itJobs.job
-
-
-
-    });
+    // jobs.addEventListener('click', function(evt){
+    //     var rowClicked = evt.target;
+    //
+    //     // get the Id of the fruit clicked on using dataset
+    //     var jobId = Number(rowClicked.dataset.jobId);
+    //
+    //     // now find the price for the fruit you clicked on
+    //
+    //     var itJobs = jobList.find(function(f){
+    //       return f.id === jobId;
+    //     });
+    //
+    //     jobInfo.textContent = itJobs.job
+    //
+    // });
 
 
 

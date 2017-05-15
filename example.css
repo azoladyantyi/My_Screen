@@ -9,3 +9,6 @@ table, tr:hover {
 body {
   background-color: pink;
 }
+#jobInfo{
+  text-decoration: line-through;
+}

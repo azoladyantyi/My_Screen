@@ -9,7 +9,7 @@ var jobTemplateText = document.querySelector('.jobsTemplate').innerHTML;
 
 var jobTemplateInst = Handlebars.compile(jobTemplateText);
 
-var jobList = [{ id : 35,  name : "Application Developer", JobType : 'Permanent', job  : 'JobType : Permanent, JobType : Permanent, jobLocation : waterfront,',},];
+var jobList = [{ id : 15, name : "Associate Developer", job : " 1 year contract	Sea Point	Nedbank"},{  id : 35,  name : "Application Developer", JobType : 'Permanent', job  : 'JobType : Permanent, JobType : Permanent, jobLocation : waterfront,'},];
 
 jobs.innerHTML = jobTemplateInst({job : jobList});
 

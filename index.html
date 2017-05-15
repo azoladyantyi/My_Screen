@@ -6,36 +6,58 @@
     <link rel="stylesheet" href="my_screen.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 
+    <script id="tableTemplate" type="text/x-handlebars-template">
+
+      <table id="tableID" border="1" style="cursor: pointer;">
+        <thead>
+          <tr>
+            <th>job title</th>
+            <th>Job Type</th>
+            <th>job location</th>
+            <th>Name of company</th>
+            <th>Age</th>
+            <th>click button to get a form</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each job}}
+          <tr>
+            <td data-job-id="{{id}}">{{jobTitle}}</td>
+            <td>{{JobType}}</td>
+            <td>{{jobLocation}}</td>
+            <td>{{NameOfCompany}}</td>
+            <td>{{Age}}</td>
+            <td><button data-jobs-id="{{id}}" onclick="formFunction('{{id}}');">{{Appy}}</button></td>
+            {{/each}}
+          </tr>
+        </tbody>
+      </table>
+    </script>
+
+    <script class="applicationTemplate" type="text/x-handlebars-template">
+
+      <h1>Welcome to IT Company</h1>
+      <h2>Application Form</h2>
+      <div>
+        {{jobTitle}}
+      </div>
+
+      <div class="">
+          Name <br>
+          <input type="text" name="name" value="" id="name"> <br><br> Surname
+          <br>
+          <input type="text" name="surname" value=""><br><br> Age
+          <br>
+          <input type="text" name="" value="" id="input"><br><br> email address <br> <input type="text" name="email" value=""> <br><br>
+      </div>
+      <button type="button" name="Submit" id="submit">Submit</button>
+
+    </script>
+
+
 </head>
 
 <body>
-    <script id="tableTemplate" type="text/x-handlebars-template">
-
-        <table id="tableID" border="1" style="cursor: pointer;">
-            <thead>
-                <tr>
-                    <th>job title</th>
-                    <th>Job Type</th>
-                    <th>job location</th>
-                    <th>Name of company</th>
-                    <th>Age</th>
-                    <th>click button to get a form</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each job}}
-                <tr>
-                    <td data-job-id="{{id}}">{{jobTitle}}</td>
-                    <td>{{JobType}}</td>
-                    <td>{{jobLocation}}</td>
-                    <td>{{NameOfCompany}}</td>
-                    <td>{{Age}}</td>
-                    <!-- /<td><button data-jobs-id="{{id}}" onclick="formFunction('{{jobTitle}}');">{{Appy}}</button></td> -->
-                    {{/each}}
-                </tr>
-            </tbody>
-        </table>
-    </script>
 
 <table id="jobDetails">
 
@@ -45,6 +67,7 @@
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for it job you like.." title="Type in job tile">
     <br><br>
     <div id="tableDisplay">
+
     </div>
     <div class="applicationForm">
 
