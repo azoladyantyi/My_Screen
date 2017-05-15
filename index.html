@@ -11,60 +11,55 @@
 <body>
     <script id="tableTemplate" type="text/x-handlebars-template">
 
-          <table id="tableID" border="1" style="cursor: pointer;">
+        <table id="tableID" border="1" style="cursor: pointer;">
             <thead>
                 <tr>
                     <th>job title</th>
                     <th>Job Type</th>
                     <th>job location</th>
                     <th>Name of company</th>
-                    <th >Age</th>
+                    <th>Age</th>
                     <th>click button to get a form</th>
                 </tr>
             </thead>
             <tbody>
-          {{#each job}}
-          <tr>
-            <td>{{jobTitle}}</td>
-            <td>{{JobType}}</td>
-            <td>{{jobLocation}}</td>
-            <td>{{NameOfCompany}}</td>
-            <td >{{Age}}</td>
-              <td><button onclick="formFunction('{{jobTitle}}');">{{Appy}}</button></td>
-            {{/each}}
-        </tr>
-      </tbody>
-    </table>
-
+                {{#each job}}
+                <tr>
+                    <td data-job-id="{{id}}">{{jobTitle}}</td>
+                    <td>{{JobType}}</td>
+                    <td>{{jobLocation}}</td>
+                    <td>{{NameOfCompany}}</td>
+                    <td>{{Age}}</td>
+                    <!-- /<td><button data-jobs-id="{{id}}" onclick="formFunction('{{jobTitle}}');">{{Appy}}</button></td> -->
+                    {{/each}}
+                </tr>
+            </tbody>
+        </table>
     </script>
+
+<table id="jobDetails">
+
+</table>
     <h2>Jobs Available...</h2>
     <button name="button" id="display">Display available jobs</button><br><br>
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for it job you like.." title="Type in job tile">
-<br><br>
+    <br><br>
     <div id="tableDisplay">
     </div>
-<div class="applicationForm">
+    <div class="applicationForm">
 
-    <h1>Welcome to IT Company</h1>
-    <h2>Application Form</h2>
-    <div class="">
-        Name <br>
-        <input type="text" name="name" value="" id="name"> <br><br>
-         Surname<br>
-        <input type="text" name="surname" value=""><br><br>
-        Age<br>
-       <input type="text" name="" value="" id="input"><br><br>
-        Job Title<br>
-        <input type="text" name="jobTitle" value=""><br><br>
-        Job Type<br>
-        <input type="text" name="jobTitle" value=""><br><br>
-        Job location <br>
-        <input type="text" name="jobTitle" value=""><br><br>
-        Name of company<br>
-        <input type="text" name="jobTitle" value=""><br><br>
+        <h1>Welcome to IT Company</h1>
+        <h2>Application Form</h2>
+        <div class="">
+            Name <br>
+            <input type="text" name="name" value="" id="name"> <br><br> Surname
+            <br>
+            <input type="text" name="surname" value=""><br><br> Age
+            <br>
+            <input type="text" name="" value="" id="input"><br><br> email address <br> <input type="text" name="email" value=""> <br><br>
+        </div>
+        <button type="button" name="Submit" id="submit">Submit</button>
     </div>
-    <button type="button" name="Submit" id="submit">Submit</button>
-  </div>
     <!-- <div id="displayResults'">
     </div> -->
     <div id="formDisplay">

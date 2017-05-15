@@ -68,7 +68,7 @@ function formFunction(jobTitle){
   var applicationForm = document.querySelector('.applicationForm');
   applicationForm.style="display:show";
 
-  console.log(jobTitle);
+  // console.log(jobTitle);
 }
 
 var table = document.getElementById("tableID");
@@ -95,7 +95,7 @@ var table = document.getElementById("tableID");
 
         if (age < 18) {
             alert("Hello! you are too young go back and grow come back when you are old enough for the jobs!");
-
+            formDisplay
         } else if (age <= 35) {
             alert("Hello! your application is successful!");
 
@@ -106,6 +106,34 @@ var table = document.getElementById("tableID");
         textBox.value = "";
     });
 
+    var jobTemplateText = document.querySelector('.jobsTemplate').innerHTML;
+
+    var jobTemplateInst = Handlebars.compile(jobTemplateText);
+
+    var jobList = [{ id : 35,  jobTitle : "Application Developer", JobType : 'Permanent', job  : 'JobType : Permanent, JobType : Permanent, jobLocation : waterfront,',}];
+
+    jobs.innerHTML = jobTemplateInst({job : jobList});
+
+
+
+    // use event bubbling to check which row in the table was clicked on
+    jobs.addEventListener('click', function(evt){
+        var rowClicked = evt.target;
+
+        // get the Id of the fruit clicked on using dataset
+        var jobId = Number(rowClicked.dataset.jobId);
+
+        // now find the price for the fruit you clicked on
+
+        var itJobs = jobList.find(function(f){
+          return f.id === jobId;
+        });
+
+        jobInfo.textContent = itJobs.job
+
+
+
+    });
 
 
 

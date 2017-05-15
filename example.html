@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="example.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script type="type/x-handlebars" class="jobsTemplate">
+    {{#each job}}
+    <tr>
+<th>job title</th>
+<th>Job Type</th>
+<th>job Location</th>
+<th>NameOfCompany</th>
+
+</tr>
+        <tr>
+          <td data-job-id="{{id}}" >{{name}}</td>
+          <td>{{jobTitle}}</td>
+          <td>{{JobType}}</td>
+          <td>{{jobLocation}}</td>
+          <td>{{NameOfCompany}}</td>
+          <td>{{Age}}</td>
+        </tr>
+    {{/each}}
+  </script>
+</head>
+<body>
+  <table class="jobs">
+
+  </table>
+
+  <div class="job">
+    job details : <span class="jobInfo">
+
+  </span>
+  </div>
+
+</body>
+<script type="text/javascript" src="example.js"></script>
+</html>
