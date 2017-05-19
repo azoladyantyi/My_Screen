@@ -34,23 +34,34 @@
       </table>
     </script>
 
-    <script class="applicationTemplate" type="text/x-handlebars-template">
+    <script id="applicationTemplate" type="text/x-handlebars-template">
 
       <h1>Welcome to IT Company</h1>
       <h2>Application Form</h2>
       <div>
+        {{#each jobTitle}}
         {{jobTitle}}
+        {{/each}}
       </div>
+
+      {{#each title}}
+      <tr>
+          <li>{{name}}</li>
+          <li>{{surname}}</li>
+          <li>{{Age}}</li>
+          <li>{{email}}</li>
+      </tr>
+      {{/each}}
 
       <div class="">
           Name <br>
           <input type="text" name="name" value="" id="name"> <br><br> Surname
           <br>
-          <input type="text" name="surname" value=""><br><br> Age
+          <input type="text" name="surname" value="" id="input"c><br><br> Age
           <br>
           <input type="text" name="" value="" id="input"><br><br> email address <br> <input type="text" name="email" value=""> <br><br>
       </div>
-      <button type="button" name="Submit" id="submit">Submit</button>
+      <button data-jobs-jobTitle=" {{jobTitle}}" onclick="submitFunction('{{jobTitle}}');">{{submit}}Submit</button>
 
     </script>
 
@@ -63,28 +74,16 @@
 
 </table>
     <h2>Jobs Available...</h2>
-    <button name="button" id="display">Display available jobs</button><br><br>
+    <!-- <button name="button" id="display">Display available jobs</button><br><br> -->
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for it job you like.." title="Type in job tile">
     <br><br>
     <div id="tableDisplay">
 
     </div>
-    <div class="applicationForm">
-
-        <h1>Welcome to IT Company</h1>
-        <h2>Application Form</h2>
-        <div class="">
-            Name <br>
-            <input type="text" name="name" value="" id="name"> <br><br> Surname
-            <br>
-            <input type="text" name="surname" value=""><br><br> Age
-            <br>
-            <input type="text" name="" value="" id="input"><br><br> email address <br> <input type="text" name="email" value=""> <br><br>
-        </div>
-        <button type="button" name="Submit" id="submit">Submit</button>
+    <div id="applicationForm">
     </div>
-    <!-- <div id="displayResults'">
-    </div> -->
+
+
     <div id="formDisplay">
 
     </div>
