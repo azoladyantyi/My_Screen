@@ -1,18 +1,28 @@
-h2{
-  color: red;
-
-}
-table , th, tr , td, tbody{
+tr , td,{
   border: 1px solid black;
   background-color: white;
   /*display: none;*/
 }
 table, tr:hover {
           background-color: 	#00FFFF;
+          color: black;
         }
 body {
   background-color: pink;
 }
-#tableTemplate tr.header, #tableTemplate tr:hover {
-  background-color: #00FFFF;
+#jobInfo{
+  text-decoration: line-through;
+}
+li.menu-item {
+   margin:0 0 10px 0;
+}
+.jobTitle{
+  margin-bottom: 10px;
+color: blue;
+}
+h1{
+  color: red;
+}
+#tableDisplay{
+  color: green;
 }
